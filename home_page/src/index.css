@@ -1,0 +1,39 @@
+/* ************************************************************************************************************************************************ */
+/* NAVBAR */
+/* ************************************************************************************************************************************************ */
+.navBrand{
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-left: 0.8rem;
+}
+
+.navBrand:hover{
+    color: black;
+}
+
+.navbarCustom{
+    background-color: #A9CA9A;
+    position: sticky;
+    font-size: 1.2rem;
+    text-align: left;
+    top: 0;
+}
+
+.navItems{
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.navLink{
+    text-decoration: none;
+    color: black;
+    margin-right: 1rem;
+}
+
+.navLink:hover{
+    color: darkgray;
+}
