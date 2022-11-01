@@ -135,8 +135,9 @@ MEDIA QUERIES
 
 @media screen and (min-width: 550px) {
     .results-grid{
-       grid-template-columns: 33.333% 33.333% 33.333%;
+       grid-template-columns: auto auto auto;
     }
+    
 
     .search-wrapper{
         grid-template-columns: 50% auto 50%;
@@ -156,6 +157,10 @@ MEDIA QUERIES
 }
 
 @media screen and (min-width: 750px) {
+    .results-grid{
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+
     .nav-container{
         display: none;
     }
