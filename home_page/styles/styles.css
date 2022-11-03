@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color1: white;
+}
+
+/* ************************************************************************************************************************************************ */
+/* NAVBAR */
+/* ************************************************************************************************************************************************ */
+.navbar {
+  background-color: var(--color1);
+  display: grid;
+  font-size: 1.2rem;
+  grid-template-columns: 200px auto auto;
+  padding: 1%;
+  position: sticky;
+  text-align: left;
+  top: 0;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  margin-right: 1rem;
+  padding: 2vh;
+}
+
+.nav-link:hover {
+  color: darkgray;
+  background-color: black;
+}
+
+.nav-link:active {
+  background-color: black;
+}
+
+.navbar-button {
+  height: auto;
+  font-size: 1.5rem;
+}
+
+.nav-brand {
+  font-size: 1.7rem;
+  font-weight: 500;
+  background-color: red;
+  color: white;
+  padding: 3%;
+}
+
+.nav-items {
+  display: none;
+  justify-self: right;
+}
+
+.nav-brand:hover {
+  color: black;
+  background-color: red;
+}
+
+.nav-btn {
+  width: 30px;
+  height: 30px;
+  justify-self: right;
+  grid-column: 3/3;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(0deg, 0%, 65%);
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  width: 50%;
+}
+
+.hide {
+  display: none;
+}
+
+/* ************************************************************************************************************************************************
+MEDIA QUERIES
+************************************************************************************************************************************************ */
+@media screen and (min-width: 750px) {
+  .nav-items {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column: 3/3;
+  }
+  .nav-btn {
+    display: none;
+  }
+}
+.intro {
+  display: grid;
+  grid-template-rows: 250px 250px;
+  height: 500px;
+  background-color: yellow;
+}
+
+.intro-text-wrapper {
+  width: 100%;
+  background-color: aquamarine;
+  grid-row: 1/1;
+}
+
+.intro-img-wrapper {
+  width: 100%;
+  background-color: rgba(127, 255, 212, 0.6);
+  grid-row: 2/2;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,22 @@
+@import "../../global_styles/master.scss";
+@import "../../global_styles/navbar.scss";
+@import "../../global_styles/footer.scss";
+
+.intro {
+    display: grid;
+    grid-template-rows: 250px 250px;
+    height: 500px;
+    background-color: yellow;
+}
+
+.intro-text-wrapper{
+    width: 100%;
+    background-color: aquamarine;
+    grid-row: 1 / 1;
+}
+
+.intro-img-wrapper{
+    width: 100%;
+    background-color: rgba(aquamarine, 0.6);
+    grid-row: 2 / 2;
+}
