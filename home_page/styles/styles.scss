@@ -1,22 +1,142 @@
 @import "../../global_styles/master.scss";
 @import "../../global_styles/navbar.scss";
 @import "../../global_styles/footer.scss";
+@import "../../global_styles/product_card.scss";
+
+// ************************************************************************************************************************************************
+// INTRO
+// ************************************************************************************************************************************************
+$intro_container_height: max(400px, 80vh);
 
 .intro {
-    display: grid;
-    grid-template-rows: 250px 250px;
-    height: 500px;
     background-color: yellow;
+    display: grid;
+    grid-template-rows: max(200px, 40vh) max(200px, 40vh);
+    height: max(400px, 80vh);
 }
 
 .intro-text-wrapper{
-    width: 100%;
     background-color: aquamarine;
+    display: grid;
+    justify-items: center;
+    align-items: center;
     grid-row: 1 / 1;
+    padding: auto;
+    width: 100%;
+}
+
+.intro-text{
+    color: white;
+    font-family: sans-serif;
+    font-size: 2.5rem;
 }
 
 .intro-img-wrapper{
     width: 100%;
     background-color: rgba(aquamarine, 0.6);
+    background-image: url(../images/intro-img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     grid-row: 2 / 2;
+}
+
+/************************************************************************************************************************************************/
+/*CAROUSEL*/
+/*************************************************************************************************************************************************/
+
+@mixin carousel_dim($scale_h: 1, $scale_w: 1) {
+    height: calc($carousel_height*$scale_h);
+    width: calc($carousel_width*$scale_w);
+    min-width: calc($carousel_width*$scale_w);
+}
+
+$carousel_height: max(200px, 40vh);
+$carousel_width: 100%;
+
+.carousel-container{
+    @include carousel_dim;
+    position: relative;
+
+    #item-1{
+        background-color: aquamarine;
+    }
+
+    #item-2{
+        background-color: aqua;
+    }
+
+    #item-3{
+        background-color: azure;
+    }
+
+    #item-4{
+        background-color: beige;
+    }
+
+    #item-5{
+        background-color: chocolate;
+    }
+
+    margin: 1% 0;
+}
+
+.left-btn{
+    @include carousel_dim(1, 0.5);
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 3;
+}
+
+.right-btn{
+    @include carousel_dim(1, 0.5);
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 3;
+}
+
+.carousel-item{
+    @include carousel_dim;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+
+.carousel-focus {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+/************************************************************************************************************************************************/
+/*MEDIA QUERIES*/
+/************************************************************************************************************************************************/
+@media screen and (min-width: 550px) {
+    
+}   
+
+@media screen and (min-width:750px) {
+    .intro{
+        grid-template-rows: none;
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+
+    .intro-img-wrapper{
+        grid-row: none;
+        grid-column: 2 / span 3;
+        height: $intro_container_height;
+    }
+    
+    .intro-text-wrapper{
+        grid-row: none;
+        grid-column: 1 / 1;
+        height: $intro_container_height;
+    }
 }

@@ -9,11 +9,14 @@
     <!--Style sheet-->
     <link rel="stylesheet" href="styles/styles.css">
 
-    <!--Vanilla JS scripts-->
-    <script src="scripts/animations.js" defer></script>
+    <!--Local JS scripts-->
+    <script src="scripts/index.js" defer></script>
+
+    <!--Global JS scripts-->
+    <script src="../global_scripts/navbar.js" defer></script>
 
     <!--REACT CDN-->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" defer crossorigin></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" defer crossorigin ></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" defer crossorigin></script>
 
     <!--REACT scripts-->
@@ -40,19 +43,22 @@
         </div>
 
         <div class="intro-img-wrapper" id="intro-img-wrapper">
-            <img src="">
+    
         </div>        
     </section>
     
     <section class="carousel-container" id="carousel-container">
-        <div class="carousel-item" id="item-1"></div>
-        <div class="carousel-item" id="item-2"></div>
-        <div class="carousel-item" id="item-3"></div>
-        <div class="carousel-item" id="item-4"></div>
+        <button class="left-btn" id="left-btn"></button>
+        <div class="carousel-item" id="item-1"><h1>item-1</h1></div>
+        <div class="carousel-item" id="item-2"><h1>item-2</h1></div>
+        <div class="carousel-item" id="item-3"><h1>item-3</h1></div>
+        <div class="carousel-item" id="item-4"><h1>item-4</h1></div>
+        <div class="carousel-item" id="item-5"><h1>item-5</h1></div>
+        <button class="right-btn" id="right-btn"></button>
     </section>
 
     <section class="popular" id="popular">
-
+        <div>popular products</div>
     </section>
 
     <section class="blog" id="blog">
@@ -60,7 +66,7 @@
     </section>
 
     <footer class="footer" id="footer">
-
+        Footer
     </footer>
 </body>
 </html>
