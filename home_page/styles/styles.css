@@ -162,6 +162,7 @@ MEDIA QUERIES
   width: 100%;
   min-width: 100%;
   position: relative;
+  overflow: hidden;
   margin: 1% 0;
 }
 .carousel-container #item-1 {
@@ -171,10 +172,10 @@ MEDIA QUERIES
   background-color: aqua;
 }
 .carousel-container #item-3 {
-  background-color: azure;
+  background-color: rgb(112, 188, 188);
 }
 .carousel-container #item-4 {
-  background-color: beige;
+  background-color: rgb(107, 107, 9);
 }
 .carousel-container #item-5 {
   background-color: chocolate;
@@ -189,7 +190,7 @@ MEDIA QUERIES
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0);
-  z-index: 3;
+  z-index: 6;
 }
 
 .right-btn {
@@ -201,23 +202,63 @@ MEDIA QUERIES
   top: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0);
-  z-index: 3;
+  z-index: 6;
 }
 
 .carousel-item {
-  height: calc(max(200px, 40vh) * 1);
-  width: 100%;
-  min-width: 100%;
-  display: none;
+  height: calc(max(200px, 40vh) * 0.5);
+  width: 80%;
+  min-width: 80%;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  padding: 5%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 10%;
+  opacity: 0;
+  transform: translateY(25%);
+  transition: all 1s;
+  z-index: 3;
 }
 
 .carousel-focus {
-  display: grid;
-  align-items: center;
-  justify-items: center;
+  height: calc(max(200px, 40vh) * 0.9);
+  width: 90%;
+  min-width: 90%;
+  left: 5%;
+  box-shadow: 0px 0px 10px;
+  opacity: 1;
+  transform: translateY(5%);
+  transition: all 1s;
+  z-index: 5;
+}
+
+.carousel-right {
+  height: calc(max(200px, 40vh) * 0.8);
+  width: 80%;
+  min-width: 80%;
+  top: 0;
+  left: 95%;
+  opacity: 1;
+  transform: translateY(10%);
+  transition: all 1s;
+  z-index: 4;
+}
+
+.carousel-left {
+  height: calc(max(200px, 40vh) * 0.8);
+  width: 80%;
+  min-width: 80%;
+  top: 0;
+  left: -75%;
+  opacity: 1;
+  transform: translateY(10%);
+  transition: all 1s;
+  z-index: 4;
 }
 
 /************************************************************************************************************************************************/

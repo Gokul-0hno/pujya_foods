@@ -43,6 +43,7 @@ $intro_container_height: max(400px, 80vh);
 /************************************************************************************************************************************************/
 /*CAROUSEL*/
 /*************************************************************************************************************************************************/
+$carousel_item_count: 5;
 
 @mixin carousel_dim($scale_h: 1, $scale_w: 1) {
     height: calc($carousel_height*$scale_h);
@@ -56,6 +57,7 @@ $carousel_width: 100%;
 .carousel-container{
     @include carousel_dim;
     position: relative;
+    overflow: hidden;
 
     #item-1{
         background-color: aquamarine;
@@ -66,11 +68,11 @@ $carousel_width: 100%;
     }
 
     #item-3{
-        background-color: azure;
+        background-color: rgb(112, 188, 188);
     }
 
     #item-4{
-        background-color: beige;
+        background-color: rgb(107, 107, 9);
     }
 
     #item-5{
@@ -87,7 +89,7 @@ $carousel_width: 100%;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0);
-    z-index: 3;
+    z-index: $carousel_item_count + 1;
 }
 
 .right-btn{
@@ -97,23 +99,57 @@ $carousel_width: 100%;
     top: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0);
-    z-index: 3;
+    z-index: $carousel_item_count + 1;
 }
 
 .carousel-item{
-    @include carousel_dim;
-    display: none;
+    @include carousel_dim(0.5, 0.8);
+    font-size: 0.8rem;
+    border-radius: 1rem;
+    padding: 5%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 0;
-    left: 0;
-    
+    left: 10%;
+    opacity: 0;
+    transform: translateY(25%);
+    transition: all 1s;
+    z-index: $carousel_item_count - 2;
 }
 
 .carousel-focus {
-    display: grid;
-    align-items: center;
-    justify-items: center;
+    @include carousel_dim(0.9, 0.9);
+    left: 5%;
+    box-shadow: 0px 0px 10px;
+    opacity: 1;
+    transform: translateY(5%);
+    transition: all 1s;
+    z-index: $carousel_item_count;
 }
+
+.carousel-right{
+    @include carousel_dim(0.8, 0.8);
+    top: 0;
+    left: 95%;
+    opacity: 1;
+    transform: translateY(10%);
+    transition: all 1s;
+    z-index: $carousel_item_count - 1;
+}
+
+.carousel-left{
+    @include carousel_dim(0.8, 0.8);
+    top: 0;
+    left: -75%;
+    opacity: 1;
+    transform: translateY(10%);
+    transition: all 1s;
+    z-index: $carousel_item_count - 1;
+}
+
 
 /************************************************************************************************************************************************/
 /*MEDIA QUERIES*/
