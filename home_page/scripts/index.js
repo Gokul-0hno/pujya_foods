@@ -11,7 +11,7 @@ items.item(last_item).classList.add("carousel-left");
 items.item(curr_item).classList.add("carousel-focus");
 items.item(next_item).classList.add("carousel-right");
 
-function clickLeft(){
+function moveLeft(){
     items.item(last_item).classList.remove("carousel-left")
     items.item(curr_item).classList.remove("carousel-focus");
     items.item(next_item).classList.remove("carousel-right");
@@ -28,7 +28,7 @@ function clickLeft(){
     items.item(next_item).classList.add("carousel-right");
 }
 
-function clickRight() {
+function moveRight() {
     items.item(last_item).classList.remove("carousel-left")
     items.item(curr_item).classList.remove("carousel-focus");
     items.item(next_item).classList.remove("carousel-right");
@@ -45,7 +45,7 @@ function clickRight() {
     items.item(next_item).classList.add("carousel-right");
 }
 
-left_btn.addEventListener("click", clickLeft);
-right_btn.addEventListener("click", clickRight);
+left_btn.addEventListener("click", moveLeft);
+right_btn.addEventListener("click", moveRight);
 
 
