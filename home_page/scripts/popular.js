@@ -75,7 +75,7 @@ function PopularBanner(props) {
     id: "popular-grid"
   }, products));
 }
-const root = ReactDOM.createRoot(document.getElementById("popular"));
-root.render( /*#__PURE__*/React.createElement(PopularBanner, {
+const popular = ReactDOM.createRoot(document.getElementById("popular"));
+popular.render( /*#__PURE__*/React.createElement(PopularBanner, {
   list: data
 }));

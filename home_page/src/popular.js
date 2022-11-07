@@ -52,5 +52,5 @@ function PopularBanner(props) {
     );
 }
 
-const root = ReactDOM.createRoot(document.getElementById("popular"));
-root.render(<PopularBanner list = {data}/>)
+const popular = ReactDOM.createRoot(document.getElementById("popular"));
+popular.render(<PopularBanner list = {data}/>)
