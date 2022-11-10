@@ -4,6 +4,7 @@
 
 body {
   font-family: "Lato", sans-serif;
+  margin: 0;
 }
 
 :root {
@@ -99,6 +100,55 @@ MEDIA QUERIES
     display: none;
   }
 }
+.footer {
+  background-color: rgb(93, 203, 176);
+  position: relative;
+  padding: 5% 1%;
+}
+
+.nl-form {
+  display: block;
+  position: absolute;
+  bottom: 200px;
+  background-color: beige;
+}
+
+.nl-label {
+  grid-row: 1/1;
+  padding: 2%;
+}
+
+.nl-input {
+  grid-row: 2/2;
+  border-bottom: 3px solid green;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin: 2%;
+  width: 75%;
+}
+
+.nl-submit {
+  padding: 1%;
+  margin: 1%;
+}
+
+.nl-interested {
+  border: none;
+  background-color: transparent;
+}
+
+.footer-form {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 .product-card {
   border: 2px solid hsl(0deg, 0%, 60%);
   border-radius: 5px;
