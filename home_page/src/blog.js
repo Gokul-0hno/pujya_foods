@@ -24,8 +24,8 @@ class BlogWrapper extends React.Component {
             <>
                 <div className="blog-title-bar">
                     <h3 className = "head-title">{this.props.blogsList[this.state.currPost].title}</h3>
-                    <h4 className="head-author">Author: {this.props.blogsList[this.state.currPost].author}</h4>
-                    <h4 className = "head-date">Date: {this.props.blogsList[this.state.currPost].date}</h4>
+                    <h4 className="head-author">by {this.props.blogsList[this.state.currPost].author}</h4>
+                    <h4 className = "head-date">Published on: {this.props.blogsList[this.state.currPost].date}</h4>
                 </div>
 
                 <div className="blog-content-pane">
@@ -33,8 +33,8 @@ class BlogWrapper extends React.Component {
                 </div>
 
                 <div className="blog-nav">
-                    <button onClick={this.handlePrevClick}>prev</button>
-                    <button onClick={this.handleNextClick}>next</button>
+                    <button className="blog-nav-left" onClick={this.handlePrevClick}>&lt;</button>
+                    <button  className="blog-nav-right" onClick={this.handleNextClick}>&gt;</button>
                 </div>
             </>
         );

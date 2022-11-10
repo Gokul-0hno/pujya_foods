@@ -77,19 +77,49 @@ $popular_width: 100%;
 .blog-title-bar{
     background-color: grey;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    padding: 1%;
 }
 
 .blog-nav{
     justify-self: right;
 }
 
+.head-title{
+    margin: 1%;
+}
+
+.head-author{
+    margin: 1%;
+}
+
+.head-date{
+    margin: 1%;
+}
+
+.blog-content-pane{
+    padding: 1%;
+}
+
+.blog-nav-left{
+    border: none;
+    font-size: 1.5rem;
+}
+
+.blog-nav-right{
+    border: none;
+    font-size: 1.5rem;
+}
 /************************************************************************************************************************************************/
 /*MEDIA QUERIES*/
 /************************************************************************************************************************************************/
 @media screen and (min-width: 550px) {
     .popular-grid{
         grid-template-columns: 33.333% 33.333% 33.333% 33.333% 33.333% 33.333% 33.333% 33.333%;
+    }
+
+    .blog-title-bar{
+        grid-template-columns: auto auto auto;
     }
     
 }   

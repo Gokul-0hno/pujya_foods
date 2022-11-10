@@ -43,17 +43,19 @@ class BlogWrapper extends React.Component {
       className: "head-title"
     }, this.props.blogsList[this.state.currPost].title), /*#__PURE__*/React.createElement("h4", {
       className: "head-author"
-    }, "Author: ", this.props.blogsList[this.state.currPost].author), /*#__PURE__*/React.createElement("h4", {
+    }, "by ", this.props.blogsList[this.state.currPost].author), /*#__PURE__*/React.createElement("h4", {
       className: "head-date"
-    }, "Date: ", this.props.blogsList[this.state.currPost].date)), /*#__PURE__*/React.createElement("div", {
+    }, "Published on: ", this.props.blogsList[this.state.currPost].date)), /*#__PURE__*/React.createElement("div", {
       className: "blog-content-pane"
     }, /*#__PURE__*/React.createElement("p", null, this.props.blogsList[this.state.currPost].content)), /*#__PURE__*/React.createElement("div", {
       className: "blog-nav"
     }, /*#__PURE__*/React.createElement("button", {
+      className: "blog-nav-left",
       onClick: this.handlePrevClick
-    }, "prev"), /*#__PURE__*/React.createElement("button", {
+    }, "<"), /*#__PURE__*/React.createElement("button", {
+      className: "blog-nav-right",
       onClick: this.handleNextClick
-    }, "next")));
+    }, ">")));
   }
 }
 const blog = ReactDOM.createRoot(document.getElementById("blog"));
