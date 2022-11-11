@@ -17,11 +17,17 @@ class FooterForm extends React.Component {
         }
         event.preventDefault();
     }
+    
+    handleClose = (event) => {
+        this.props.wrapper.style.display="";
+        event.preventDefault();        
+    }
 
     render() {
         return (
             <form onSubmit={this.handleSubmit} className="nl-form">
                 <label className='nl-label'>Subscribe to our newsletter</label>
+                <button className="nl-close-btn" onClick={this.handleClose}>&#10006;</button>
                 <input className='nl-input' type='email' placeholder='Email' value={this.state.value} onChange={this.handleChange} />
                 <input className='nl-submit' type='submit' value='Subscribe' />
             </form>
@@ -33,7 +39,7 @@ class FooterForm extends React.Component {
 
 const banner = document.getElementById("footer-form");
 function revealForm() {
-    banner.style.display = "block";
+    banner.style.display = "grid";
 }
 
 const footer = ReactDOM.createRoot(document.getElementById("footer-form"));

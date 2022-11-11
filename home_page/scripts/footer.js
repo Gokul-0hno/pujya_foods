@@ -20,13 +20,20 @@ class FooterForm extends React.Component {
     }
     event.preventDefault();
   };
+  handleClose = event => {
+    this.props.wrapper.style.display = "";
+    event.preventDefault();
+  };
   render() {
     return /*#__PURE__*/React.createElement("form", {
       onSubmit: this.handleSubmit,
       className: "nl-form"
     }, /*#__PURE__*/React.createElement("label", {
       className: "nl-label"
-    }, "Subscribe to our newsletter"), /*#__PURE__*/React.createElement("input", {
+    }, "Subscribe to our newsletter"), /*#__PURE__*/React.createElement("button", {
+      className: "nl-close-btn",
+      onClick: this.handleClose
+    }, "\u2716"), /*#__PURE__*/React.createElement("input", {
       className: "nl-input",
       type: "email",
       placeholder: "Email",
@@ -41,7 +48,7 @@ class FooterForm extends React.Component {
 }
 const banner = document.getElementById("footer-form");
 function revealForm() {
-  banner.style.display = "block";
+  banner.style.display = "grid";
 }
 const footer = ReactDOM.createRoot(document.getElementById("footer-form"));
 footer.render( /*#__PURE__*/React.createElement(FooterForm, {

@@ -107,30 +107,38 @@ MEDIA QUERIES
 }
 
 .nl-form {
-  display: block;
+  display: grid;
   position: absolute;
-  bottom: 200px;
+  height: 20vh;
+  width: 90%;
+  grid-template-areas: "l l l l l l l l l l l l l l c" ". i i i i i i i i i i i i i ." ". . . . . s s s s s . . . . .";
+  border-radius: 10px 10px 5px 10px;
+  bottom: 20vh;
+  align-items: center;
+  justify-items: center;
   background-color: beige;
 }
 
+.nl-close-btn {
+  grid-area: c;
+}
+
 .nl-label {
-  grid-row: 1/1;
+  grid-area: l;
   padding: 2%;
 }
 
 .nl-input {
-  grid-row: 2/2;
+  grid-area: i;
   border-bottom: 3px solid green;
   border-top: none;
   border-left: none;
   border-right: none;
-  margin: 2%;
-  width: 75%;
 }
 
 .nl-submit {
+  grid-area: s;
   padding: 1%;
-  margin: 1%;
 }
 
 .nl-interested {
@@ -146,6 +154,7 @@ MEDIA QUERIES
   height: 100%;
   width: 100%;
   z-index: 20;
+  justify-items: center;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -181,6 +190,7 @@ MEDIA QUERIES
   background-color: hsl(0deg, 0%, 70%);
   grid-row: 9/span 2;
   padding: 2%;
+  border-radius: 0 0 5px 5px;
   min-width: 0;
   min-height: 0;
   display: grid;
@@ -430,4 +440,4 @@ MEDIA QUERIES
   }
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=home_page.css.map */
