@@ -5,10 +5,12 @@ class FooterForm extends React.Component {
     }
 
     handleChange = (event) => {
+        event.stopPropagation();
         this.setState({value: event.target.value});
     }
 
     handleSubmit = (event) => {
+        event.stopPropagation();      
         if (this.state.value === "") alert("Enter a valid email ID");
         else { 
             alert("You are now suscribed to the newsletter!\nYour mail ID: " + this.state.value);
@@ -20,16 +22,18 @@ class FooterForm extends React.Component {
     
     handleClose = (event) => {
         this.props.wrapper.style.display="";
-        event.preventDefault();        
+        event.preventDefault();  
     }
 
     render() {
         return (
             <form onSubmit={this.handleSubmit} className="nl-form">
-                <label className='nl-label'>Subscribe to our newsletter</label>
+                <label className='nl-label'>Subscribe to our newsletter!</label>
                 <button className="nl-close-btn" onClick={this.handleClose}>&#10006;</button>
+                <i className="fa-solid fa-envelopes-bulk nl-icon" />
                 <input className='nl-input' type='email' placeholder='Email' value={this.state.value} onChange={this.handleChange} />
                 <input className='nl-submit' type='submit' value='Subscribe' />
+                <p className="nl-p">(P.S. We won't share your email address with any third party)</p>
             </form>
         );
     }
@@ -38,12 +42,16 @@ class FooterForm extends React.Component {
 
 
 const banner = document.getElementById("footer-form");
+
 function revealForm() {
     banner.style.display = "grid";
 }
+
+
 
 const footer = ReactDOM.createRoot(document.getElementById("footer-form"));
 footer.render(<FooterForm wrapper={banner}/>)
 
 const nl_disp = document.getElementById("nl-interested");
 nl_disp.addEventListener("click", revealForm);
+

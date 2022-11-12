@@ -35,8 +35,9 @@
 }
 
 .navbar-button{
+
     height: auto;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .nav-brand{
@@ -60,8 +61,12 @@
 }
 
 .nav-btn{
+    display: grid;
+    justify-items: center;
+    align-items: center;
     width: 30px;
     height: 30px;
+    font-size: 1.5rem;
     justify-self: right;
     grid-column: 3 / 3;
 }

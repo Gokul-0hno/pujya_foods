@@ -20,6 +20,9 @@
     <!--Global JS scripts-->
     <script src="../global_scripts/navbar.js" defer></script>
 
+    <!--FONT AWESOME script-->
+    <script src="https://kit.fontawesome.com/64369a3711.js" crossorigin="anonymous"></script>
+
     <!--REACT CDN-->
     <script src="https://unpkg.com/react@18/umd/react.development.js" defer crossorigin ></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" defer crossorigin></script>
@@ -34,7 +37,7 @@
 <body>
     <nav class="navbar" id="navbar">
         <a class="nav-link nav-brand" href="#">PUJYA Foods</a>
-        <button class="nav-btn" id="nav-btn"></button>
+        <button class="nav-btn" id="nav-btn"><i class="fa-solid fa-bars"></i></button>
         <div class="nav-items" id="nav-items">
             <a class="nav-link" href="#products">Products</a>
             <a class="nav-link" href="#about">About us</a>
@@ -103,10 +106,16 @@
     </section>
 
     <footer class="footer" id="footer">
-        <button class="nl-interested" id="nl-interested">Interested in our newsletter? Click here!</button>
-        <div class="footer-form" id="footer-form">
-            
+        <div class="footer-form" id="footer-form"></div>
+        <div class="soc-banner" id="follow">
+            <button class="soc-ico fa-regular fa-envelope" id="nl-interested"></button>
+            <a target="_blank" href="https://www.google.com/maps/place/PUJYA+foods/@11.0356372,76.9796918,17z/data=!3m1!4b1!4m5!3m4!1s0x3ba85995b6ea13bd:0x1967947c30af001a!8m2!3d11.0356352!4d76.9796922" class="fa-regular fa-map soc-ico"></a>
+            <a target="_blank" href="#" class="soc-ico fa-brands fa-twitter"></a>
+            <a target="_blank" href="#" class="soc-ico fa-brands fa-instagram"></a>
+            <a target="_blank" href="#" class="soc-ico fa-brands fa-facebook"></a>
+            <a target="_blank" href="#" class="soc-ico fa-brands fa-youtube"></a>
         </div>
+        <p style="text-align: center; margin: 0">	&#169;2022 Pujya Foods</p>
     </footer>
 </body>
 </html>
