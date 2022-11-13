@@ -33,8 +33,8 @@ class BlogWrapper extends React.Component {
                 </div>
 
                 <div className="blog-nav">
-                    <button className="blog-nav-left" onClick={this.handlePrevClick}>&lt;</button>
-                    <button  className="blog-nav-right" onClick={this.handleNextClick}>&gt;</button>
+                    <button className="blog-nav-left blog-nav-btn" onClick={this.handlePrevClick}>&lt;</button>
+                    <button  className="blog-nav-right blog-nav-btn" onClick={this.handleNextClick}>&gt;</button>
                 </div>
             </>
         );

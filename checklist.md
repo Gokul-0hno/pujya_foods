@@ -3,7 +3,7 @@
         [x] - Build static front end.
         [x] - Update front end to change state based on hardcoded data.
 
-    [ ] - Build static **home page**.
+    [x] - Build static **home page**.
 
     [ ] - Template for Cart
         [ ] - Static front end.

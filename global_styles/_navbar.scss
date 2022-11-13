@@ -1,12 +1,9 @@
-:root{
-    --color1: white;
-}
-
+@use "./colors";
 /* ************************************************************************************************************************************************ */
 /* NAVBAR */
 /* ************************************************************************************************************************************************ */
 .navbar{
-    background-color: var(--color1);
+    background-color: colors.$col_1_1;
     display: grid;
     font-size: 1.2rem;
     grid-template-columns: 200px auto auto;
@@ -26,8 +23,8 @@
 }
 
 .nav-link:hover{
-    color: darkgray;
-    background-color: black;
+    color: black;
+    background-color: colors.$col_1_4;
 }
 
 .nav-link:active{
@@ -74,7 +71,7 @@
 .show{
     display: flex;
     flex-direction: column;
-    background-color: hsl(0, 0%, 65%);
+    background-color: colors.$col_1_2;
     position: absolute;
     z-index: 2;
     top: 100%;

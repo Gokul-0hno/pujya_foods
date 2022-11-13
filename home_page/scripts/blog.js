@@ -50,10 +50,10 @@ class BlogWrapper extends React.Component {
     }, /*#__PURE__*/React.createElement("p", null, this.props.blogsList[this.state.currPost].content)), /*#__PURE__*/React.createElement("div", {
       className: "blog-nav"
     }, /*#__PURE__*/React.createElement("button", {
-      className: "blog-nav-left",
+      className: "blog-nav-left blog-nav-btn",
       onClick: this.handlePrevClick
     }, "<"), /*#__PURE__*/React.createElement("button", {
-      className: "blog-nav-right",
+      className: "blog-nav-right blog-nav-btn",
       onClick: this.handleNextClick
     }, ">")));
   }

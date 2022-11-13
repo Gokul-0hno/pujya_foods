@@ -1,23 +1,23 @@
+@use "./colors";
 @import "_master.scss";
 @import "_navbar.scss";
 @import "_footer.scss";
 @import "_product_card.scss";
 @import "_carousel.scss";
-
 // ************************************************************************************************************************************************
 // INTRO
 // ************************************************************************************************************************************************
 $intro_container_height: max(400px, 80vh);
 
 .intro {
-    background-color: yellow;
+    background-color: colors.$col_1_3;
     display: grid;
     grid-template-rows: max(200px, 40vh) max(200px, 40vh);
     height: max(400px, 80vh);
 }
 
 .intro-text-wrapper{
-    background-color: aquamarine;
+    background-color: colors.$col_1_3;
     display: grid;
     justify-items: center;
     align-items: center;
@@ -34,7 +34,7 @@ $intro_container_height: max(400px, 80vh);
 
 .intro-img-wrapper{
     width: 100%;
-    background-color: rgba(aquamarine, 0.6);
+    background-color: rgba(colors.$col_1_3, 0.6);
     background-image: url(../images/intro-img.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -61,6 +61,7 @@ $popular_width: 100%;
     display: grid;
     grid-auto-flow: row;
     grid-template-columns: 100% 100% 100% 100% 100% 100% 100% 100%;
+    gap: 15%;
 }
 
 /************************************************************************************************************************************************/
@@ -77,7 +78,7 @@ $popular_width: 100%;
 }
 
 .blog-title-bar{
-    background-color: grey;
+    background-color: colors.$col_1_3;
     display: grid;
     grid-template-rows: auto auto auto;
     padding: 1%;
@@ -112,6 +113,10 @@ $popular_width: 100%;
 .blog-nav-right{
     border: none;
     font-size: 1.5rem;
+}
+
+.blog-nav-btn{
+    background-color: colors.$col_1_3;
 }
 /************************************************************************************************************************************************/
 /*MEDIA QUERIES*/
