@@ -45,7 +45,7 @@ class ProductCard extends React.Component {
       alt: this.props.itemId
     }), /*#__PURE__*/React.createElement("div", {
       className: "product-desc"
-    }, /*#__PURE__*/React.createElement("h3", null, this.props.itemId), /*#__PURE__*/React.createElement("p", null, this.props.desc), /*#__PURE__*/React.createElement("h4", null, "Weight: ", this.props.quantity)), /*#__PURE__*/React.createElement(ProductActions, {
+    }, /*#__PURE__*/React.createElement("h3", null, this.props.itemId), /*#__PURE__*/React.createElement("h4", null, "Weight: ", this.props.quantity)), /*#__PURE__*/React.createElement(ProductActions, {
       cost: this.props.cost
     }));
   }

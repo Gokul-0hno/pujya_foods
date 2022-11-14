@@ -17,7 +17,6 @@ class ProductCard extends React.Component {
             
                 <div className='product-desc'>
                     <h3>{this.props.itemId}</h3>
-                    <p>{this.props.desc}</p>
                     <h4>Weight: {this.props.quantity}</h4>
                 </div>
 
