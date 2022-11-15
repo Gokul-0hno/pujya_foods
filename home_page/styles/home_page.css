@@ -11,18 +11,18 @@ body {
   margin: 0;
   display: grid;
   grid-gap: 1rem 1rem;
-  background-color: #EBFFFA;
+  background-color: #fcfdf2;
 }
 
 /* ************************************************************************************************************************************************ */
 /* NAVBAR */
 /* ************************************************************************************************************************************************ */
 .navbar {
-  background-color: #EBFFFA;
+  background-color: #fcfdf2;
   display: grid;
   font-size: 1.2rem;
   grid-template-columns: 200px auto auto;
-  padding: 1%;
+  padding: 1rem;
   position: sticky;
   text-align: left;
   top: 0;
@@ -39,7 +39,7 @@ body {
 
 .nav-link:hover {
   color: black;
-  background-color: #5ae2e9;
+  background-color: #D7A86E;
 }
 
 .nav-link:active {
@@ -65,7 +65,7 @@ body {
 }
 
 .nav-brand:hover {
-  color: black;
+  color: #FFCA03;
   background-color: red;
 }
 
@@ -83,7 +83,7 @@ body {
 .show {
   display: flex;
   flex-direction: column;
-  background-color: #6EF3D6;
+  background-color: #FFCA03;
   position: absolute;
   z-index: 2;
   top: 100%;
@@ -111,7 +111,7 @@ MEDIA QUERIES
 /*FOOTER*/
 /************************************************************************************************************************************************/
 .footer {
-  background-color: #5ae2e9;
+  background-color: #D7A86E;
   position: relative;
   padding: 3% 1%;
   display: grid;
@@ -201,7 +201,7 @@ MEDIA QUERIES
 }
 
 .loc-ico:hover {
-  color: white;
+  color: #fcfdf2;
 }
 
 .loc-banner {
@@ -255,8 +255,7 @@ MEDIA QUERIES
 /*PRODUCT CARD*/
 /************************************************************************************************************************************************/
 .product-card {
-  border: 2px solid #5ae2e9;
-  border-radius: 5px;
+  border: 2px solid #8E3200;
   transition: box-shadow 0.5s;
   min-height: 400px;
   display: grid;
@@ -264,7 +263,7 @@ MEDIA QUERIES
 }
 
 .product-card:hover {
-  box-shadow: 0 0 10px #85e8c2;
+  box-shadow: 0 0 10px #D7A86E;
 }
 
 .product-image {
@@ -286,30 +285,31 @@ MEDIA QUERIES
 
 .actions-container {
   grid-row: 8/span 1;
-  padding: 0.2rem;
+  padding: 2%;
   border-radius: 0 0 5px 5px;
   min-width: 0;
   min-height: 0;
   display: grid;
+  align-items: center;
 }
 
 .price-label {
   grid-column: 1/1;
-  align-self: center;
+  margin: 0;
 }
 
 .action-btn {
   grid-column: 3/3;
-  font-size: 0.8rem;
-  align-self: center;
-  min-height: 50px;
-  background-color: #5ae2e9;
-  border: 1px solid #85e8c2;
+  font-size: 0.9rem;
+  min-height: 40px;
+  background-color: #8E3200;
+  border: 1px solid #D7A86E;
   border-radius: 5px;
+  color: #fcfdf2;
 }
 
 .action-btn:hover {
-  background-color: #85e8c2;
+  background-color: #D7A86E;
 }
 
 /************************************************************************************************************************************************/
@@ -324,16 +324,16 @@ MEDIA QUERIES
   margin: 1% 0;
 }
 .carousel-container #item-1 {
-  background-color: #EBFFFA;
+  background-color: #fcfdf2;
 }
 .carousel-container #item-2 {
-  background-color: #6EF3D6;
+  background-color: #FFCA03;
 }
 .carousel-container #item-3 {
-  background-color: #85e8c2;
+  background-color: #D7A86E;
 }
 .carousel-container #item-4 {
-  background-color: #5ae2e9;
+  background-color: #8E3200;
 }
 .carousel-container #item-5 {
   background-color: chocolate;
@@ -419,22 +419,23 @@ MEDIA QUERIES
 }
 
 .intro {
-  background-color: #85e8c2;
+  background-color: #D7A86E;
   display: grid;
   grid-template-columns: 1fr;
-  height: max(400px, 70vh);
+  height: max(250px, 60vh);
   min-width: 0;
 }
 
 .intro-text {
   color: white;
   font-family: sans-serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px black;
 }
 
 .intro-img-wrapper {
   width: 100%;
-  background-color: rgba(133, 232, 194, 0.6);
+  background-color: rgba(215, 168, 110, 0.6);
   background-image: url(../images/intro-img.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -443,21 +444,32 @@ MEDIA QUERIES
   grid-template-rows: repeat(7, minmax(0, 1fr));
   justify-items: center;
   align-items: center;
-  height: max(400px, 70vh);
+  height: max(250px, 60vh);
 }
 
 .intro-text-wrapper {
-  grid-row: 2/span 5;
+  grid-row: 1/span 5;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  padding: 5%;
+  width: 90%;
+  text-align: center;
 }
 
 .intro-btn {
   border: none;
-  background-color: white;
+  background-color: #FFCA03;
   border-radius: 1.5rem;
   font-size: 1rem;
-  grid-row: 7/span 1;
-  width: 80%;
+  grid-row: 6/span 1;
+  min-width: 180px;
   height: 80%;
+}
+
+.intro-btn:hover {
+  background-color: #fcfdf2;
+  cursor: pointer;
 }
 
 /************************************************************************************************************************************************/
@@ -470,7 +482,7 @@ MEDIA QUERIES
 .popular-grid {
   overflow-x: scroll;
   overflow-y: hidden;
-  height: calc(max(500px, 50vh) * 1);
+  height: calc(max(400px, 40vh) * 1);
   width: 100%;
   min-width: 100%;
   display: grid;
@@ -490,13 +502,12 @@ MEDIA QUERIES
   display: grid;
   grid-template-rows: auto auto auto;
   border: 1px solid hsl(0deg, 0%, 50%);
-  border-radius: 5px;
-  margin: 0 2%;
-  width: 96%;
+  margin: 0;
+  width: 100%;
 }
 
 .blog-title-bar {
-  background-color: #85e8c2;
+  background-color: #D7A86E;
   display: grid;
   grid-template-rows: auto auto auto;
   padding: 1%;
@@ -534,7 +545,12 @@ MEDIA QUERIES
 }
 
 .blog-nav-btn {
-  background-color: #85e8c2;
+  background-color: #D7A86E;
+}
+
+.blog-nav-btn:hover {
+  background-color: #FFCA03;
+  cursor: pointer;
 }
 
 /************************************************************************************************************************************************/
@@ -543,6 +559,9 @@ MEDIA QUERIES
 @media screen and (min-width: 550px) {
   .popular-grid {
     grid-template-columns: repeat(7, 50%);
+  }
+  .intro-text {
+    font-size: 2.75rem;
   }
   .blog-title-bar {
     grid-template-columns: auto auto auto;
@@ -561,8 +580,11 @@ MEDIA QUERIES
     grid-column: 2/span 3;
     grid-row: 1/span 5;
   }
+  .intro-text {
+    font-size: 3rem;
+  }
   .intro-btn {
-    width: 60%;
+    width: 180px;
     height: 80%;
     grid-row: 5/span 1;
     grid-column: 2/span 3;
@@ -572,9 +594,16 @@ MEDIA QUERIES
   .popular-grid {
     grid-template-columns: repeat(7, 25%);
   }
+  .intro-img-wrapper {
+    grid-template-rows: repeat(7, minmax(0, 1fr));
+  }
   .intro-btn {
     grid-column: 3/span 1;
-    width: 100%;
+    width: 180px;
+    grid-row: 6/span 1;
+  }
+  .intro-text {
+    font-size: 3.5rem;
   }
 }
 
