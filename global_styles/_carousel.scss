@@ -10,7 +10,7 @@ $carousel_item_count: 5;
     min-width: calc($carousel_width*$scale_w);
 }
 
-$carousel_height: max(200px, 40vh);
+$carousel_height: 100%;
 $carousel_width: 100%;
 
 .carousel-container{

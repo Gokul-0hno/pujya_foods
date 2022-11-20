@@ -1,0 +1,27 @@
+@use './colors';
+
+@import './master';
+@import './navbar';
+@import './searchbar';
+@import './details_pane';
+@import './product_card';
+@import './carousel';
+@import './footer';
+
+@media screen and (min-width: 750px) {
+    .content-area{
+        display: grid;
+        height: 80vh;
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+        border: 3px solid colors.$col_1_3;
+
+    }
+
+    .carousel-container{
+        grid-column: 1 / span 6;
+    }
+
+    .details-pane{
+        grid-column: 7 / span 4;
+    }
+}

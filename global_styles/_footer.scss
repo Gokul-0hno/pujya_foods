@@ -87,6 +87,8 @@
     transform: translateX(8%) translateY(10%);
 }
 
+
+
 .nl-p{
     grid-area: m; 
     font-size: 0.6rem;
@@ -131,6 +133,11 @@
 
 .soc-ico:hover {
     filter: invert(1);
+    cursor: pointer;
+}
+
+.footer-text{
+    text-align: center;
 }
 
 @media screen and (min-width:550px) {
