@@ -2,9 +2,7 @@
     [x] - Build template for **products page**.
         [x] - Build static front end.
         [x] - Update front end to change state based on hardcoded data.
-
     [x] - Build static **home page**.
-    
     [ ] - Template for Details page
         [x] - Navbar.
         [x] - Image carousel.
@@ -14,16 +12,12 @@
         [ ] - Review pane.
             [ ] - View reviews.
             [ ] - Add review for a particular order number.
-
     [ ] - Template for Cart
         [ ] - Static front end.
         [ ] - Update front end to change state based on hardcoded data.
-
     [ ] - Template Checkout Page
         [ ] - Static front end.
         [ ] - Update front end to change state based on hardcoded data.
-
-
 [ ] - **Backend**
     [ ] - Fetch preset categories API.
     [ ] - Indexing.
