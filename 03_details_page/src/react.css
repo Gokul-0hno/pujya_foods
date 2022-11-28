@@ -83,7 +83,7 @@ body {
 .show {
   display: flex;
   flex-direction: column;
-  background-color: #FFCA03;
+  background-color: rgb(245, 213, 181);
   position: absolute;
   z-index: 2;
   top: 100%;
@@ -110,13 +110,106 @@ MEDIA QUERIES
 /************************************************************************************************************************************************/
 /*DETAILS PANE*/
 /************************************************************************************************************************************************/
-@media screen and (min-width: 750px) {
+.details-pane {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background-color: rgb(245, 213, 181);
+  grid-template-columns: none;
+  grid-template-rows: auto auto auto;
+}
+
+.dp-title {
+  grid-row: 1/span 1;
+  margin: 1rem 1rem;
+  font-size: 1.5rem;
+}
+
+.dp-desc {
+  grid-row: 2/span 1;
+  margin: 1rem;
+  line-height: 1.5;
+}
+
+.dp-price-label {
+  grid-row: 1/span 1;
+  margin: 0;
+}
+
+.dp-buy-now {
+  grid-row: 2/span 1;
+}
+
+.dp-add-cart {
+  grid-row: 3/span 1;
+}
+
+.dp-action-btn {
+  font-size: 0.9rem;
+  min-height: 40px;
+  background-color: #8E3200;
+  border: 1px solid #D7A86E;
+  border-radius: 5px;
+  color: #fcfdf2;
+}
+
+.dp-action-container {
+  grid-row: 3/span 1;
+  display: grid;
+  bottom: 0;
+  background-color: rgb(245, 213, 181);
+  align-items: center;
+  margin: 0;
+  padding: 0.6rem 1rem;
+  row-gap: 0.4rem;
+  height: 75px;
+  grid-template-rows: auto auto auto;
+}
+
+.dp-action-btn:hover {
+  background-color: #D7A86E;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 550px) {
+  .dp-action-container {
+    grid-template-columns: auto 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 0;
+    grid-template-rows: none;
+  }
+  .dp-price-label {
+    grid-row: 1/span 1;
+    grid-column: 1/1;
+    margin: 0 0.4rem 0 0;
+  }
+  .dp-buy-now {
+    grid-row: 1/span 1;
+    grid-column: 2/span 1;
+  }
+}
+@media screen and (min-width: 1000px) {
   .details-pane {
     height: 100%;
     width: 100%;
     display: grid;
     overflow-y: scroll;
-    background-color: #D7A86E;
+    padding: 1 rem;
+  }
+  .dp-action-container {
+    border-radius: 0 0 5px 5px;
+    min-width: 0;
+    min-height: 0;
+    grid-template-columns: auto 1fr 1fr;
+    margin: 1rem;
+    column-gap: 1rem;
+  }
+  .dp-price-label {
+    grid-column: 1/1;
+    margin: 0 0.4rem 0 0;
+  }
+  .dp-buy-now {
+    grid-column: 2/span 1;
   }
 }
 /************************************************************************************************************************************************/
@@ -152,13 +245,15 @@ MEDIA QUERIES
 }
 
 .actions-container {
-  grid-row: 8/span 1;
   padding: 2%;
   border-radius: 0 0 5px 5px;
   min-width: 0;
   min-height: 0;
   display: grid;
   align-items: center;
+  grid-template-columns: auto 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 0.25rem;
 }
 
 .price-label {
@@ -189,22 +284,6 @@ MEDIA QUERIES
   min-width: 100%;
   position: relative;
   overflow: hidden;
-  margin: 1% 0;
-}
-.carousel-container #item-1 {
-  background-color: #fcfdf2;
-}
-.carousel-container #item-2 {
-  background-color: #FFCA03;
-}
-.carousel-container #item-3 {
-  background-color: #D7A86E;
-}
-.carousel-container #item-4 {
-  background-color: #8E3200;
-}
-.carousel-container #item-5 {
-  background-color: chocolate;
 }
 
 .left-btn {
@@ -236,7 +315,6 @@ MEDIA QUERIES
   width: 80%;
   min-width: 80%;
   font-size: 0.8rem;
-  padding: 5%;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -245,19 +323,18 @@ MEDIA QUERIES
   top: 0;
   left: 10%;
   opacity: 0;
-  transform: translateY(25%);
+  transform: translateY(50%);
   transition: all 1s;
-  z-index: 3;
 }
 
 .carousel-focus {
-  height: 90%;
+  height: 95%;
   width: 70%;
   min-width: 70%;
   left: 15%;
   box-shadow: 0px 0px 10px hsla(0deg, 0%, 0%, 0.4);
   opacity: 1;
-  transform: translateY(5%);
+  transform: translateY(2.5%);
   transition: all 1s;
   z-index: 5;
 }
@@ -269,7 +346,7 @@ MEDIA QUERIES
   top: 0;
   left: 90%;
   opacity: 1;
-  transform: translateY(10%);
+  transform: translateY(12.5%);
   transition: all 1s;
   z-index: 4;
 }
@@ -281,7 +358,7 @@ MEDIA QUERIES
   top: 0;
   left: -70%;
   opacity: 1;
-  transform: translateY(10%);
+  transform: translateY(12.5%);
   transition: all 1s;
   z-index: 4;
 }
@@ -435,18 +512,79 @@ MEDIA QUERIES
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
+.img-wrapper {
+  object-fit: cover;
+  width: 100%;
+  overflow: hidden;
+}
+
+/************************************************************************************************************************************************/
+/*POPULAR BANNER*/
+/************************************************************************************************************************************************/
+.popular {
+  margin: 1rem;
+}
+
+.popular-grid {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: calc(max(400px, 40vh) * 1);
+  width: 100%;
+  min-width: 100%;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(7, 100%);
+  gap: 3rem;
+}
+
+@media screen and (min-width: 550px) {
+  .popular-grid {
+    grid-template-columns: repeat(7, 50%);
+  }
+}
 @media screen and (min-width: 750px) {
+  .popular-grid {
+    grid-template-columns: repeat(7, 33.333%);
+  }
+}
+@media screen and (min-width: 1000px) {
+  .popular-grid {
+    grid-template-columns: repeat(7, 25%);
+  }
+}
+.content-area {
+  display: grid;
+  grid-template-rows: 0.5fr 1.5fr;
+  grid-template-columns: none;
+  border: 3px solid #D7A86E;
+  height: 880px;
+  min-height: 600px;
+}
+
+.carousel-container {
+  grid-row: 1/span 1;
+}
+
+.details-pane {
+  grid-row: 2/span 1;
+}
+
+@media screen and (min-width: 1000px) {
   .content-area {
-    display: grid;
     height: 80vh;
     grid-template-columns: repeat(10, minmax(0, 1fr));
-    border: 3px solid #D7A86E;
+    grid-template-rows: none;
   }
   .carousel-container {
     grid-column: 1/span 6;
+    grid-row: 1/2;
   }
   .details-pane {
     grid-column: 7/span 4;
+    grid-row: 1/2;
+  }
+  .actions-container {
+    background-color: inherit;
   }
 }
 

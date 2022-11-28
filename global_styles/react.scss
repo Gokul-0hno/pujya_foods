@@ -7,21 +7,46 @@
 @import './product_card';
 @import './carousel';
 @import './footer';
+@import './img_wrapper';
+@import './popular_banner';
 
-@media screen and (min-width: 750px) {
+.content-area{
+    display: grid;
+    grid-template-rows: 0.5fr 1.5fr;
+    grid-template-columns: none;
+    border: 3px solid colors.$col_1_3;
+    height: 880px;
+    min-height: 600px;
+}
+
+.carousel-container{
+    grid-row: 1/ span 1;
+}
+
+.details-pane{
+    grid-row: 2 / span 1;
+}
+
+
+
+@media screen and (min-width: 1000px) {
     .content-area{
-        display: grid;
         height: 80vh;
         grid-template-columns: repeat(10, minmax(0, 1fr));
-        border: 3px solid colors.$col_1_3;
-
+        grid-template-rows: none;
     }
 
     .carousel-container{
         grid-column: 1 / span 6;
+        grid-row: 1 / 2;
     }
 
     .details-pane{
         grid-column: 7 / span 4;
+        grid-row: 1 / 2;
+    }
+
+    .actions-container{
+        background-color: inherit;
     }
 }

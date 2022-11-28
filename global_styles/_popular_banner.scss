@@ -1,0 +1,43 @@
+/************************************************************************************************************************************************/
+/*POPULAR BANNER*/
+/************************************************************************************************************************************************/
+$popular_height: max(400px, 40vh);
+$popular_width: 100%;
+
+@mixin popular_dim($scale_h: 1, $scale_w: 1) {
+    height: calc($popular_height*$scale_h);
+    width: calc($popular_width*$scale_w);
+    min-width: calc($popular_width*$scale_w);
+}
+
+.popular{
+    margin: 1rem;
+}
+
+.popular-grid{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    @include popular_dim;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(7, 100%);
+    gap: 3rem;
+}
+
+@media screen and (min-width: 550px) {
+    .popular-grid{
+        grid-template-columns: repeat(7, 50%);
+    }
+}
+
+@media screen and (min-width:750px) {
+    .popular-grid{
+        grid-template-columns: repeat(7, 33.333%);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .popular-grid{
+        grid-template-columns: repeat(7, 25%);
+    }
+}

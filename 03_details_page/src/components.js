@@ -1,17 +1,46 @@
 import React from "react";
 
-function Navbar(props) {
-    return(
-        <nav className="navbar" id="navbar">
-            <button className="nav-link nav-brand" href="#">PUJYA Foods</button>
-            <button className="nav-btn" id="nav-btn"><i className="fa-solid fa-bars"></i></button>
-            <div className="nav-items" id="nav-items">
-                <a className="nav-link" href="#products">Products</a>
-                <a className="nav-link" href="#about">About us</a>
-                <a className="nav-link" href="#contact">Contact us</a>
-            </div>
-        </nav>
-    );
+class Navbar extends React.Component {
+
+    componentDidMount() {
+        this.menu = document.getElementById("nav-items")
+        this.isDisplayed = false;
+        this.btn = document.getElementById("nav-btn");
+        this.btn.addEventListener("focusout", this.handleFocusOut);
+    }
+
+    handleFocusOut = () =>{
+        this.menu.classList.remove('show');
+        this.menu.classList.add('hide');
+        this.isHidden = true;
+    }
+
+    handleClick = () => {
+        if(!this.isDisplayed) {
+            this.menu.classList.add("show");
+            this.menu.classList.remove("hide");
+            this.isDisplayed = true;
+        }
+        else {
+            this.menu.classList.add("hide");
+            this.menu.classList.remove("show");
+            this.isDisplayed = false;
+        }
+    }
+
+    render() {
+        return(
+            <nav className="navbar" id="navbar">
+                <button className="nav-link nav-brand" href="#">PUJYA Foods</button>
+                <button className="nav-btn" id="nav-btn" onClick={this.handleClick}><i className="fa-solid fa-bars"></i></button>
+                <div className="nav-items" id="nav-items">
+                    <a className="nav-link" href="#products">Products</a>
+                    <a className="nav-link" href="#about">About us</a>
+                    <a className="nav-link" href="#contact">Contact us</a>
+                </div>
+            </nav>
+        );
+    }
 }
 
 function Footer(props) {
@@ -82,47 +111,70 @@ class Carousel extends React.Component {
     }
 
     render() {
-    return(
-        <section className="carousel-container" id="carousel-container">
-            <button className="left-btn" id="left-btn" onClick={this.moveLeft}></button>
-            <div className="carousel-item" id="item-1">
-                <h1>Payasams</h1>
-                <p>
-                    Choose from our range of delectable payasam mixes that ensure authentic taste with a fraction of the effort.
-                </p>
-            </div>
+        
+        let items = [];
+        let key = 1;
+        this.props.objects.forEach((element) => {
+            items.push(<div className="carousel-item" key={key}>{element}</div>);
+            ++key;
+        });
 
-            <div className="carousel-item" id="item-2">
-                <h1>Masalas</h1>
-                <p>
-                    Perfect blend of spices in line with the traditional recipes help you make the same tasty food items every 
-                    single time.
-                </p>
-            </div>
-
-            <div className="carousel-item" id="item-3">
-                <h1>Savouries</h1>
-                <p>
-                    Choose from a range of famous tea time snacks to add flair to your evenings.
-                </p>
-            </div>
-
-            <div className="carousel-item" id="item-4">
-                <h1>Ready-to-cook</h1>
-                <p>Crave idli but feel the method is cumbersome? We have you covered with our batter mixes.</p>
-            </div>
-
-            <div className="carousel-item" id="item-5">
-                <h1>Edible oils</h1>
-                <p>
-                    Choose from our range of edible oils manufactured with the highest safety standards in mind.
-                </p>
-            </div>
-
-            <button className="right-btn" id="right-btn" onClick={this.moveRight}></button>
-        </section>
-    );
+        return(
+            <section className="carousel-container" id="carousel-container">
+                <button className="left-btn" id="left-btn" onClick={this.moveLeft}></button>
+                {items}
+                <button className="right-btn" id="right-btn" onClick={this.moveRight}></button>
+            </section>
+        );
     }
 }
 
-export {Navbar, Footer, Carousel};
+function ImageWrapper(props) {
+    return(
+        <img alt="" className='img-wrapper' src={props.src} />
+    );
+}
+
+function ProductActions(props) {
+    return (
+        <div className='actions-container'>
+            <h4 className='price-label'>Cost: &#x20B9;{props.cost}</h4>
+            <button className='action-btn add-cart'>Add to cart</button>
+        </div>
+    );
+}
+
+function PopularBanner(props) {
+    let products = [];
+    props.list.forEach((product) => {
+        products.push(<ProductCard itemId={product.name} cost={product.cost} quantity={product.quantity} desc={product.description} key={product.name}/>);
+    });
+
+    return(
+        <div className="popular">
+            <h1>Our most popular items</h1>
+            <div className="popular-grid" id="popular-grid">
+                {products} 
+            </div>
+        </div>
+    );
+}
+
+class ProductCard extends React.Component {
+    render() {
+        return (
+            <div className='product-card' id={this.props.itemId}>
+                <img className='product-image' src='https://placehold.jp/300x150.png' alt={this.props.itemId}/>
+            
+                <div className='product-desc'>
+                    <h3>{this.props.itemId}</h3>
+                    <h4>Weight: {this.props.quantity}</h4>
+                </div>
+
+                <ProductActions cost={this.props.cost} />
+            </div>
+        );
+    }
+}
+
+export {Navbar, Footer, Carousel, ImageWrapper, ProductActions, PopularBanner, ProductCard};
