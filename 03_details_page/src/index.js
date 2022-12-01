@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./react.css";
-import {Navbar, Footer, Carousel, ImageWrapper, PopularBanner} from './components.js'
+import {Navbar, Footer, Carousel, ImageWrapper, PopularBanner, ReviewPane} from './components.js'
 
 const images = [{src: "https://via.placeholder.com/900"}, 
                 {src: "https://via.placeholder.com/900"},
@@ -43,6 +43,7 @@ class App extends React.Component {
                     <Carousel objects={toRender} />                        
                     <DetailsPane data={this.props.data}/>
                 </main>
+                <ReviewPane />
                 <PopularBanner list={data}/>               
                 <Footer />
             </>
@@ -64,7 +65,7 @@ class DetailsPane extends React.Component {
 
 function DetailsActions(props) {
     return(
-        <div className="dp-action-container" id="dp-action-container">
+        <div className="dp-actions-container" id="dp-actions-container">
             <h4 className="dp-price-label" id="dp-price-label">Cost: &#x20B9;{props.cost}</h4>
             <button className="dp-action-btn buy-now">Buy Now</button>
             <button className="dp-action-btn add-cart">Add to cart</button>

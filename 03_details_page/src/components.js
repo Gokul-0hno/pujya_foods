@@ -120,11 +120,11 @@ class Carousel extends React.Component {
         });
 
         return(
-            <section className="carousel-container" id="carousel-container">
-                <button className="left-btn" id="left-btn" onClick={this.moveLeft}></button>
+            <div className="carousel-container" id="carousel-container">
+                <button className="left-btn" id="left-btn" onClick={this.moveLeft} title="Navigate left"></button>
                 {items}
-                <button className="right-btn" id="right-btn" onClick={this.moveRight}></button>
-            </section>
+                <button className="right-btn" id="right-btn" onClick={this.moveRight} title="Navigate right"></button>
+            </div>
         );
     }
 }
@@ -151,12 +151,12 @@ function PopularBanner(props) {
     });
 
     return(
-        <div className="popular">
+        <section className="popular">
             <h1>Our most popular items</h1>
             <div className="popular-grid" id="popular-grid">
                 {products} 
             </div>
-        </div>
+        </section>
     );
 }
 
@@ -177,4 +177,38 @@ class ProductCard extends React.Component {
     }
 }
 
-export {Navbar, Footer, Carousel, ImageWrapper, ProductActions, PopularBanner, ProductCard};
+class ReviewPane extends React.Component {
+    componentDidMount() {
+        //Code to get reviews from the server for the particular product.
+        
+        
+    }
+
+    render() {
+        this.reviews = [];
+        for (let i = 0; i < 5; ++i) {
+            this.reviews.push(
+                <div className="review-capsule" id={`review-capsule-${i}`} key={i}>
+                    <img className="reviewer-avatar" src='https://via.placeholder.com/100' alt={`review by person number ${i}`}/> 
+                    <p className="review-title" id={`review-title-${i}`}>Lorem Ipsum Dolor Sit Amet</p>
+                    <div className="review-stars" id={`review-stars-${i}`}>⭐⭐⭐⭐⭐</div>
+                </div>
+            );
+        }
+
+        return(
+            <section className="review-wrapper" id="review-wrapper">
+                <h1 className="review-title">Reviews(225)</h1>
+                <div className="review-list" id="review-list">
+                    {this.reviews}
+                </div>
+                <div className="review-summary" id="review-summary">
+                    <p className="review-average-rating">Average Rating: 4.6*</p>
+                    <button className="review-create-new">Write a review</button>
+                </div>
+            </section>
+        );
+    }
+}
+
+export {Navbar, Footer, Carousel, ImageWrapper, ProductActions, PopularBanner, ProductCard, ReviewPane};

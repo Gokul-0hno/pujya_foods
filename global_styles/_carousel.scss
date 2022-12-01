@@ -8,6 +8,7 @@ $carousel_item_count: 5;
     height: calc($carousel_height*$scale_h);
     width: calc($carousel_width*$scale_w);
     min-width: calc($carousel_width*$scale_w);
+
 }
 
 $carousel_height: 100%;
@@ -15,6 +16,7 @@ $carousel_width: 100%;
 
 .carousel-container{
     @include carousel_dim;
+    min-height: 50vh;
     position: relative;
     overflow: hidden;
 }
@@ -37,6 +39,14 @@ $carousel_width: 100%;
     right: 0;
     background-color: rgba(0, 0, 0, 0);
     z-index: $carousel_item_count + 1;
+}
+
+.left-btn:hover{
+    cursor: pointer;
+}
+
+.right-btn:hover{
+    cursor: pointer
 }
 
 .carousel-item{

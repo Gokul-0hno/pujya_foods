@@ -6,7 +6,7 @@
     [ ] - Template for Details page
         [x] - Navbar.
         [x] - Image carousel.
-        [ ] - Details pane.
+        [x] - Details pane.
         [x] - Popular products.
         [x] - Footer.
         [ ] - Review pane.
@@ -18,6 +18,7 @@
     [ ] - Template Checkout Page
         [ ] - Static front end.
         [ ] - Update front end to change state based on hardcoded data.
+
 [ ] - **Backend**
     [ ] - Fetch preset categories API.
     [ ] - Indexing.
