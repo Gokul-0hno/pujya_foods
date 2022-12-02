@@ -179,33 +179,53 @@ class ProductCard extends React.Component {
 
 class ReviewPane extends React.Component {
     componentDidMount() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                console.log(entry);
+                if (entry.isIntersecting){
+                    entry.target.classList.add('review-show');
+                }
+            });
+        });
+
+        const hidden_elements = document.querySelectorAll('.review-hide');
+        hidden_elements.forEach((el) => observer.observe(el));
+        
         //Code to get reviews from the server for the particular product.
-        
-        
     }
 
     render() {
         this.reviews = [];
         for (let i = 0; i < 5; ++i) {
             this.reviews.push(
-                <div className="review-capsule" id={`review-capsule-${i}`} key={i}>
+                <div className="review-capsule review-hide" id={`review-capsule-${i}`} key={i}>
                     <img className="reviewer-avatar" src='https://via.placeholder.com/100' alt={`review by person number ${i}`}/> 
                     <p className="review-title" id={`review-title-${i}`}>Lorem Ipsum Dolor Sit Amet</p>
                     <div className="review-stars" id={`review-stars-${i}`}>⭐⭐⭐⭐⭐</div>
+                    <div className="review-desc" id={`review-desc-${i}`}>Lorem Ipsum DOlor Sit amet</div>
                 </div>
             );
         }
 
         return(
             <section className="review-wrapper" id="review-wrapper">
-                <h1 className="review-title">Reviews(225)</h1>
+                <h1 className="review-title">What our customers have to say:</h1>
                 <div className="review-list" id="review-list">
                     {this.reviews}
                 </div>
                 <div className="review-summary" id="review-summary">
-                    <p className="review-average-rating">Average Rating: 4.6*</p>
-                    <button className="review-create-new">Write a review</button>
+                    <button className="review-create-new action-btn-gen">Write a review</button>
                 </div>
+                <form className="review-form" id="review-form" >
+                    <label className="review-label review-form-item" id="review-order-label" htmlFor="review-order">Enter your order number:</label><br />
+                    <input className="review-form-input review-order review-form-item" id="review-order"/><br />
+                    <button className="action-btn-gen review-order-search review-form-item" id="review-order-search">Enter</button><br />
+                    <label className="review-form-item">Rate your products:</label><br />
+                    <input className="review-form-item" /><br />
+                    <label className="review-form-item" >Comments:</label><br />
+                    <input className="review-form-item" /><br />
+                    <input className='review-form-item action-btn-gen' type='submit' value='Submit Review' /><br />
+                </form>
             </section>
         );
     }

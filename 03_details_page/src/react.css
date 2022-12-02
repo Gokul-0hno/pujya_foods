@@ -14,6 +14,19 @@ body {
   background-color: #fcfdf2;
 }
 
+.action-btn-gen {
+  font-size: 0.9rem;
+  min-height: 40px;
+  background-color: #8E3200;
+  border: 1px solid #D7A86E;
+  border-radius: 5px;
+  color: #fcfdf2;
+}
+
+.action-btn-gen:hover {
+  cursor: pointer;
+}
+
 /* ************************************************************************************************************************************************ */
 /* NAVBAR */
 /* ************************************************************************************************************************************************ */
@@ -159,7 +172,7 @@ MEDIA QUERIES
 /*PRODUCT CARD*/
 /************************************************************************************************************************************************/
 .product-card {
-  border: 2px solid #8E3200;
+  border: 1px solid #D7A86E;
   transition: box-shadow 0.5s;
   min-height: 400px;
   display: grid;
@@ -474,15 +487,12 @@ MEDIA QUERIES
 /*POPULAR BANNER*/
 /************************************************************************************************************************************************/
 .popular {
-  margin: 1rem;
+  padding: 1rem;
 }
 
 .popular-grid {
+  padding: 1rem 0;
   overflow-x: scroll;
-  overflow-y: hidden;
-  height: calc(max(400px, 40vh) * 1);
-  width: 100%;
-  min-width: 100%;
   display: grid;
   grid-auto-flow: row;
   grid-template-columns: repeat(7, 100%);
@@ -507,28 +517,38 @@ MEDIA QUERIES
 .review-wrapper {
   padding: 1rem;
   display: grid;
+  gap: 1rem;
 }
 
 .review-list {
+  display: grid;
   grid-row: 2/span 1;
+  overflow: hidden;
+  gap: 1rem;
+  align-items: center;
+  justify-items: center;
+  padding: 1rem 0;
 }
 .review-list .review-capsule {
   height: 100px;
-  width: 100%;
+  width: 80%;
   overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: auto repeat(2, minmax(0, 1fr));
   grid-template-rows: 1fr 1fr;
   align-items: center;
-  border: 2px solid;
   gap: 0.5rem;
+  border: 1px solid #D7A86E;
+  border-radius: 50px;
 }
 .review-list .review-capsule .reviewer-avatar {
+  aspect-ratio: 1/1;
   object-fit: cover;
   overflow: hidden;
   grid-column: 1/span 1;
   grid-row: 1/span 2;
   width: 100%;
+  border-radius: 50px;
 }
 .review-list .review-capsule .review-title {
   grid-row: 2/span 1;
@@ -536,10 +556,47 @@ MEDIA QUERIES
   margin: 0;
 }
 
+.review-hide {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 2s, transform 2s, box-shadow 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+.review-hide:nth-child(even) {
+  transform: translateX(100%);
+}
+
+.review-show {
+  opacity: 1;
+  transform: translateX(10%);
+}
+
+.review-show:nth-child(even) {
+  transform: translateX(-10%);
+}
+
+.review-show:hover {
+  box-shadow: 0 0 10px #D7A86E;
+}
+
 .review-summary {
   grid-row: 3/span 1;
   display: grid;
   grid-template-rows: 1fr 1fr;
+  justify-items: center;
+}
+.review-summary .review-create-new {
+  width: 40%;
+}
+
+.review-form {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: center;
+}
+.review-form .review-form-item {
+  width: 80%;
 }
 
 @media screen and (min-width: 550px) {
@@ -550,8 +607,8 @@ MEDIA QUERIES
   .review-summary {
     justify-items: center;
     align-items: center;
-    grid-column: 2/span 1;
-    grid-row: 2/span 1;
+    grid-column: 1/span 1;
+    grid-row: 3/span 1;
   }
 }
 .content-area {

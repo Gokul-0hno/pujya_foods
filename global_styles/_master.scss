@@ -15,3 +15,15 @@ body{
     background-color: colors.$col_1_1;
 }
 
+.action-btn-gen{
+    font-size: 0.9rem;
+    min-height: 40px;
+    background-color: colors.$col_1_4;
+    border: 1px solid colors.$col_1_3;
+    border-radius: 5px;
+    color: colors.$col_1_1;
+}
+
+.action-btn-gen:hover{
+    cursor: pointer;
+}
