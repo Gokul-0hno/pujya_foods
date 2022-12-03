@@ -41,7 +41,9 @@
             margin: 0;
         }
 
-
+        .review-desc{
+            display: none;
+        }
     }
 }
 
@@ -77,18 +79,26 @@
 
     .review-create-new{
         width: 40%;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        text-decoration: none;
     }
     
 }
 
 .review-form{
-    display: grid;
+    display: none;
     gap: 0.5rem;
     justify-items: center;
 
     .review-form-item{
         width: 80%;
     }
+}
+
+.review-form-show{
+    display: grid;
 }
 
 
@@ -104,5 +114,13 @@
         align-items: center;
         grid-column: 1 / span 1;
         grid-row: 3 / span 1;
+    }
+
+    .review-list{
+        .review-capsule{
+            .review-desc{
+                display: block;
+            }
+        }
     }
 }

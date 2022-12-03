@@ -191,19 +191,29 @@ class ReviewPane extends React.Component {
         const hidden_elements = document.querySelectorAll('.review-hide');
         hidden_elements.forEach((el) => observer.observe(el));
         
+        this.formIsVisible = false;
         //Code to get reviews from the server for the particular product.
+    }
+
+    handleClick = (event) => {
+        const form = document.getElementById("review-form");
+        if(this.formIsVisible) {
+            form.classList.remove("review-form-show");
+            this.formIsVisible = false;
+            event.target.innerHTML = "Write a review";
+        } else {
+            form.classList.add("review-form-show");
+            this.formIsVisible = true;
+            event.target.innerHTML = "Close the form";
+        }
+        event.preventDefault();
     }
 
     render() {
         this.reviews = [];
         for (let i = 0; i < 5; ++i) {
             this.reviews.push(
-                <div className="review-capsule review-hide" id={`review-capsule-${i}`} key={i}>
-                    <img className="reviewer-avatar" src='https://via.placeholder.com/100' alt={`review by person number ${i}`}/> 
-                    <p className="review-title" id={`review-title-${i}`}>Lorem Ipsum Dolor Sit Amet</p>
-                    <div className="review-stars" id={`review-stars-${i}`}>⭐⭐⭐⭐⭐</div>
-                    <div className="review-desc" id={`review-desc-${i}`}>Lorem Ipsum DOlor Sit amet</div>
-                </div>
+                <ReviewCapsule id={i} key={i}/>
             );
         }
 
@@ -214,21 +224,81 @@ class ReviewPane extends React.Component {
                     {this.reviews}
                 </div>
                 <div className="review-summary" id="review-summary">
-                    <button className="review-create-new action-btn-gen">Write a review</button>
+                    <a className="review-create-new action-btn-gen" href="#review-form"onClick={this.handleClick}>Write a review</a>
                 </div>
-                <form className="review-form" id="review-form" >
-                    <label className="review-label review-form-item" id="review-order-label" htmlFor="review-order">Enter your order number:</label><br />
-                    <input className="review-form-input review-order review-form-item" id="review-order"/><br />
-                    <button className="action-btn-gen review-order-search review-form-item" id="review-order-search">Enter</button><br />
-                    <label className="review-form-item">Rate your products:</label><br />
-                    <input className="review-form-item" /><br />
-                    <label className="review-form-item" >Comments:</label><br />
-                    <input className="review-form-item" /><br />
-                    <input className='review-form-item action-btn-gen' type='submit' value='Submit Review' /><br />
-                </form>
+                <ReviewForm />
             </section>
         );
     }
+
+}
+
+class ReviewForm extends React.Component{
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            order: "",
+            rating: "",
+            comment: ""
+        };
+    }
+
+    handleSubmit = (event) => {
+        alert(
+            "Your rating summary:\n" + 
+            `Order Number: ${this.state.order} \n` + 
+            `Your rating: ${this.state.rating} \n` +
+            `Your Comment: ${this.state.comment}`
+        );
+
+        this.setState({
+            order: "",
+            rating: "",
+            comment: ""
+        });
+        event.preventDefault();
+    }
+
+    handleOrderSearch = (event) => {
+        event.preventDefault();
+    }
+
+    handleInputChange = (event) => {
+        if(event.target.id === "review-order") {
+            this.setState({order: event.target.value});
+        } else if(event.target.id === "review-rating") {
+            this.setState({rating: event.target.value});
+        } else if(event.target.id === "review-comment") {
+            this.setState({comment: event.target.value});
+        }
+    }
+
+    render() {
+        return(
+            <form className="review-form" id="review-form" onSubmit={this.handleSubmit}>
+                <label className="review-label review-form-item" id="review-order-label" htmlFor="review-order">Enter your order number:</label><br />
+                <input required className="review-form-input review-order review-form-item" id="review-order" value={this.state.order} onChange={this.handleInputChange}/><br />
+                <button className="action-btn-gen review-order-search review-form-item" id="review-order-search" onClick={this.handleOrderSearch}>Enter</button><br />
+                <label required className="review-form-item">Rate your products:</label><br />
+                <input className="review-form-item" id="review-rating" value={this.state.rating} onChange={this.handleInputChange}/><br />
+                <label className="review-form-item" >Comments:</label><br />
+                <input className="review-form-item" id="review-comment" value={this.state.comment} onChange={this.handleInputChange}/><br />
+                <input className='review-form-item action-btn-gen' type='submit' value='Submit Review' /><br />
+            </form>
+        );
+    }
+}
+
+function ReviewCapsule(props) {
+    return(
+        <div className="review-capsule review-hide" id={`review-capsule-${props.id}`} key={props.id}>
+                    <img className="reviewer-avatar" src='https://via.placeholder.com/100' alt={`review by person number ${props.id}`}/> 
+                    <p className="review-title" id={`review-title-${props.id}`}>Lorem Ipsum Dolor Sit Amet</p>
+                    <div className="review-stars" id={`review-stars-${props.id}`}>⭐⭐⭐⭐⭐</div>
+                    <div className="review-desc" id={`review-desc-${props.id}`}>Lorem Ipsum Dolor Sit amet</div>
+        </div>
+    );
 }
 
 export {Navbar, Footer, Carousel, ImageWrapper, ProductActions, PopularBanner, ProductCard, ReviewPane};
