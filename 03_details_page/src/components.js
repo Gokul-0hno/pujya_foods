@@ -191,23 +191,10 @@ class ReviewPane extends React.Component {
         const hidden_elements = document.querySelectorAll('.review-hide');
         hidden_elements.forEach((el) => observer.observe(el));
         
-        this.formIsVisible = false;
         //Code to get reviews from the server for the particular product.
     }
 
-    handleClick = (event) => {
-        const form = document.getElementById("review-form");
-        if(this.formIsVisible) {
-            form.classList.remove("review-form-show");
-            this.formIsVisible = false;
-            event.target.innerHTML = "Write a review";
-        } else {
-            form.classList.add("review-form-show");
-            this.formIsVisible = true;
-            event.target.innerHTML = "Close the form";
-        }
-        event.preventDefault();
-    }
+    
 
     render() {
         this.reviews = [];
@@ -223,9 +210,7 @@ class ReviewPane extends React.Component {
                 <div className="review-list" id="review-list">
                     {this.reviews}
                 </div>
-                <div className="review-summary" id="review-summary">
-                    <a className="review-create-new action-btn-gen" href="#review-form"onClick={this.handleClick}>Write a review</a>
-                </div>
+                
                 <ReviewForm />
             </section>
         );
@@ -260,6 +245,27 @@ class ReviewForm extends React.Component{
         event.preventDefault();
     }
 
+    handleClick = (event) => {
+        this.modal.style.display = "grid";
+        
+        if(this.formIsVisible) {
+            this.form.classList.remove("review-form-show");
+            this.formIsVisible = false;
+            event.target.innerHTML = "Write a review";
+        } else {
+            this.form.classList.add("review-form-show");
+            this.formIsVisible = true;
+            event.target.innerHTML = "Close the form";
+        }
+        event.preventDefault();
+    }
+
+    componentDidMount() {
+        this.form = document.getElementById("review-form");
+        this.modal = document.getElementById("review-form-modal");
+        this.formIsVisible = false;
+    }
+
     handleOrderSearch = (event) => {
         event.preventDefault();
     }
@@ -274,18 +280,34 @@ class ReviewForm extends React.Component{
         }
     }
 
+    handleClose = () => {
+        this.form.classList.remove("review-form-show");
+        this.formIsVisible = false;
+        this.modal.style.display = "none";
+        document.getElementById("review-create-new").innerHTML="Write a review"
+    }
+
     render() {
         return(
-            <form className="review-form" id="review-form" onSubmit={this.handleSubmit}>
-                <label className="review-label review-form-item" id="review-order-label" htmlFor="review-order">Enter your order number:</label><br />
-                <input required className="review-form-input review-order review-form-item" id="review-order" value={this.state.order} onChange={this.handleInputChange}/><br />
-                <button className="action-btn-gen review-order-search review-form-item" id="review-order-search" onClick={this.handleOrderSearch}>Enter</button><br />
-                <label required className="review-form-item">Rate your products:</label><br />
-                <input className="review-form-item" id="review-rating" value={this.state.rating} onChange={this.handleInputChange}/><br />
-                <label className="review-form-item" >Comments:</label><br />
-                <input className="review-form-item" id="review-comment" value={this.state.comment} onChange={this.handleInputChange}/><br />
-                <input className='review-form-item action-btn-gen' type='submit' value='Submit Review' /><br />
-            </form>
+            <>
+                <div className="review-summary" id="review-summary">
+                        <a className="review-create-new action-btn-gen" id="review-create-new" href="#review-form"onClick={this.handleClick}>Write a review</a>
+                </div>
+                <div className="review-form-modal" id="review-form-modal">
+                    <form className="review-form" id="review-form" onSubmit={this.handleSubmit}>
+                        <h3 className="review-form-title">Submit a review</h3>
+                        <button className="review-close-btn" onClick={this.handleClose}>&#10006;</button>
+                        <label className="review-label review-form-item" id="review-order-label" htmlFor="review-order">Enter your order number:</label>
+                        <input required className="review-form-input review-order review-form-item" id="review-order" value={this.state.order} onChange={this.handleInputChange}/>
+                        <button className="action-btn-gen review-order-search review-form-item" id="review-order-search" onClick={this.handleOrderSearch}>Enter</button>
+                        <label required className="review-form-item">Rate your products:</label>
+                        <input className="review-form-item" id="review-rating" value={this.state.rating} onChange={this.handleInputChange}/>
+                        <label className="review-form-item" >Comments:</label>
+                        <input className="review-form-item" id="review-comment" value={this.state.comment} onChange={this.handleInputChange}/>
+                        <input className='review-form-item action-btn-gen' type='submit' value='Submit Review' />
+                    </form>
+                </div>  
+            </>
         );
     }
 }

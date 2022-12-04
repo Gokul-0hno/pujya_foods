@@ -3,15 +3,15 @@
         [x] - Build static front end.
         [x] - Update front end to change state based on hardcoded data.
     [x] - Build static **home page**.
-    [ ] - Template for Details page
+    [x] - Template for Details page
         [x] - Navbar.
         [x] - Image carousel.
         [x] - Details pane.
         [x] - Popular products.
         [x] - Footer.
-        [ ] - Review pane.
-            [ ] - View reviews.
-            [ ] - Add review for a particular order number.
+        [x] - Review pane.
+            [x] - View reviews.
+            [x] - Add review for a particular order number.
     [ ] - Template for Cart
         [ ] - Static front end.
         [ ] - Update front end to change state based on hardcoded data.
