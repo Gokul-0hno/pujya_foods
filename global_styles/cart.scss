@@ -1,0 +1,11 @@
+@import './master';
+
+.cart-pane{
+    height: 100vh;
+    padding: 1rem;
+    font-size: 0.75rem;
+
+    .cart-title{
+        margin: 0;
+    }
+}
