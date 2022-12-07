@@ -8,7 +8,7 @@ function PopularBanner(props) {
 
     return(
         <section className="popular">
-            <h1>Our most popular items</h1>
+            <h1 className="popular-head">Our most popular items</h1>
             <div className="popular-grid" id="popular-grid">
                 {products} 
             </div>

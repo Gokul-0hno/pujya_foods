@@ -17,12 +17,18 @@ const products = [
     {"name": "Suraj Vermicelli Payasam Mix", "quantity": "250gms", "description": "Lorem Ipsum Dolores Sit Amet", "cost": "75"},
 ]
 
+const cartItems = [
+    {"name": "Matta Palada Payasam Mix", "weight": "250gms", "cost": "70", "src": "https://via.placeholder.com/100", "catNo": "5"},
+    {"name": "Multi Millet Payasam Mix", "weight": "500gms", "cost": "79.09", "src": "https://via.placeholder.com/100", "catNo": "6"},
+    {"name": "Adapradhaman Payasam Mix", "weight": "250gms", "cost": "77.27", "src": "https://via.placeholder.com/100", "catNo": "10"},
+];
+
 function App(props) {
     return (
         <>
             <Navbar />
             <section className='content-area'>
-                <CartPane />
+                <CartPane cartItems={cartItems}/>
                 <PopularBanner list={products}/>
             </section>
             <Footer />
