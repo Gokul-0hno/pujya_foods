@@ -1,4 +1,5 @@
 import ProductCard from "./productcard";
+import { SectionTitle } from "./misc";
 
 function PopularBanner(props) {
     let products = [];
@@ -8,7 +9,9 @@ function PopularBanner(props) {
 
     return(
         <section className="popular">
-            <h1 className="popular-head">Our most popular items</h1>
+            <SectionTitle id="popular-products">
+                Our most popular products
+            </SectionTitle>
             <div className="popular-grid" id="popular-grid">
                 {products} 
             </div>
