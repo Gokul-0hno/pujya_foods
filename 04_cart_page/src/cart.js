@@ -48,7 +48,7 @@ function CartCapsule(props) {
             <ActionButton id="cart-delete">Remove from Cart</ActionButton>
             <p className="cart-item-weight">Weight: {props.weight}</p>
             <p className="cart-item-cost">Cost: &#x20B9;{props.cost}</p>
-            <QuantityDrop />
+            <QuantityDrop className="cart-item-quantity"/>
         </div>
     );
 }
