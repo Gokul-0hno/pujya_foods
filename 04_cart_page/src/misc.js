@@ -20,7 +20,7 @@ class QuantityDrop extends React.Component {
     render() {
         return(
             <div id="quantity-selector" className={`${this.props.className}`}>
-                <label htmlFor="Quantity">Quantity:</label>
+                
                 <button>-</button>
                 <select name="Quantity:" id="quantity">
                     <option value="1">1</option>

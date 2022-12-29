@@ -64,21 +64,25 @@
     border: 1px solid colors.$col_1_2;
     width: 100%;
     display: grid;
-    grid-template-columns: 70px repeat(2, 1fr);
+    grid-template-columns: 90px repeat(2, 1fr);
     grid-template-areas: 
-    "p b c "
-    "w q q"
-    "t t t";
+    "t t t"
+    "c w w "
+    "l q q"
+    "b b b";
     gap: 1rem;
-    justify-items: center;
+    justify-items: left;
     align-items: center;
-
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    
     .cart-item-picture{
         width: 70px;
         aspect-ratio: 1 / 1;
         grid-area: p;
+        display: none;
     }
-
+    
     .cart-item-title{
         grid-area: t;
     }
@@ -86,17 +90,24 @@
     .cart-item-weight{
         grid-area: w;
         margin: 0;
+        font-size: inherit;
+        justify-self: right;
     }
 
     .cart-item-cost{
         grid-area: c;
         margin: 0;
+        width: 100%;
     }
 
     .cart-item-quantity{
         grid-area: q;
         margin: 0;
-        justify-self: center;
+        justify-self: right;
+    }
+
+    .quantity-label{
+        grid-area: l;
     }
 
     .action-btn-cart-delete{
@@ -104,10 +115,126 @@
         color: rgba(255, 0, 0, 0.7);
         border: 1px solid rgba(255, 0, 0, 0.7);
         background-color: transparent;
+        width: 100%;
     }
 
     .action-btn-cart-delete:hover{
         background-color: rgba(255, 0, 0, 0.7);
         color: white;
+    }
+}
+ 
+@media screen and (min-width: 800px) {
+
+    #root{
+        background-color: inherit;
+    }
+
+    .content-area{
+        display: grid;
+        background-color: inherit;
+
+
+        .cart-pane{
+            width: 100%;
+            display: grid;
+            .cart-items{
+                grid-column: 1 / span 3;
+
+                .cart-title{
+                    margin: 0;
+                }
+            
+                .cart-items-wrapper{
+                    overflow-y: scroll;
+                    display: grid;
+                    gap: 1rem;
+                    grid-template-rows:repeat(auto-fill, 150px);
+                    padding: 1rem;        
+                }
+            }    
+
+            .cart-summary{
+                grid-column: 4 / span 1;
+
+                .summary-wrapper{
+                    padding: 1rem;
+                    display: grid;    
+                    gap: 1rem;
+
+                    .col-1{
+                        grid-column: 1 / span 1;
+                    }
+
+                    .col-2{
+                        grid-column: 2 / sspan 1;
+                    }
+
+                    .action-btn{
+                        grid-column: 1 / span 2;
+                    }
+                }
+            }
+        }
+
+        .popular{
+            background-color: inherit;
+        
+            .popular-grid{
+                grid-auto-flow: column;
+                width: 100%;
+            }
+        }
+    }
+
+    .cart-item{
+        border: 1px solid colors.$col_1_2;
+        width: 100%;
+        height: 150px;
+        display: grid;
+        grid-template-columns: 150px repeat(3, 1fr);
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        grid-template-areas: 
+        "p t t b b"
+        "p w c l q";
+        gap: 1rem;
+        justify-items: start;
+        align-items: center;
+        padding-left: 0;
+
+        .cart-item-picture{
+            width: 150px;
+            aspect-ratio: 1 / 1;
+            grid-area: p;
+            display: block;
+        }
+
+        .cart-item-title{
+            grid-area: t;
+        }
+
+        .cart-item-weight{
+            grid-area: w;
+        }
+
+        .quantity-label{
+            grid-area: l;
+        }
+
+        .cart-item-quantity{
+            grid-area: q;
+        }
+
+        .action-btn-cart-delete{
+            grid-area: b;
+            color: rgba(255, 0, 0, 0.7);
+            border: 1px solid rgba(255, 0, 0, 0.7);
+            background-color: transparent;
+        }
+
+        .action-btn-cart-delete:hover{
+            background-color: rgba(255, 0, 0, 0.7);
+            color: white;
+        }
     }
 }

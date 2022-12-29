@@ -49,6 +49,7 @@ function CartCapsule(props) {
             <p className="cart-item-weight">Weight: {props.weight}</p>
             <p className="cart-item-cost">Cost: &#x20B9;{props.cost}</p>
             <QuantityDrop className="cart-item-quantity"/>
+            <label htmlFor="Quantity" className="quantity-label">Quantity:</label>
         </div>
     );
 }
