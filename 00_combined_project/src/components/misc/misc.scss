@@ -1,0 +1,35 @@
+@use '../../colors';
+/************************************************************************************************************************************************/
+/*MISC COMPONENTS*/
+/************************************************************************************************************************************************/
+.section-title{
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.product-title{
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.text-content{
+    margin: 0;
+    font-size: 1rem;
+}
+
+.action-btn{
+    font-size: 0.9rem;
+    min-height: 40px;
+    background-color: colors.$col_1_4;
+    border: 1px solid colors.$col_1_3;
+    border-radius: 5px;
+    color: colors.$col_1_1;
+}
+
+.action-btn:hover{
+    background-color: colors.$col_1_3;
+    cursor: pointer;
+}
+/************************************************************************************************************************************************/

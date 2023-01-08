@@ -1,0 +1,65 @@
+@use "../../colors";
+/************************************************************************************************************************************************/
+/*PRODUCT CARD*/
+/************************************************************************************************************************************************/
+.product-card{
+    border: 1px solid colors.$col_1_3;
+    transition: box-shadow 0.5s;
+    min-height: 400px;
+    display: grid;
+    grid-template-rows: repeat(8, minmax(0, 1fr));
+}
+
+.product-card:hover{
+    box-shadow: 0 0 10px colors.$col_1_3;
+}
+
+.product-image{
+    object-fit: cover;
+    width: 100%;
+    grid-row: 1 / span 5;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+}
+
+.product-desc{
+    grid-row: 6 / span 2;
+    padding: 2%;
+    min-width: 0;
+    min-height: 0;
+    align-self: baseline;
+}
+
+.actions-container{
+
+    padding: 2%;
+    border-radius: 0 0 5px 5px;
+    min-width: 0;
+    min-height: 0;
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 0.25rem;
+}
+
+.price-label{
+    grid-column: 1 / 1;
+    margin: 0;
+}
+
+.action-btn{
+    grid-column: 3 / 3;
+    font-size: 0.9rem;
+    min-height: 40px;
+    background-color: colors.$col_1_4;
+    border: 1px solid colors.$col_1_3;
+    border-radius: 5px;
+    color: colors.$col_1_1;
+}
+
+.action-btn:hover{
+    background-color: colors.$col_1_3;
+}
+/************************************************************************************************************************************************/

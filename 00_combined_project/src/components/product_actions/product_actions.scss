@@ -1,0 +1,32 @@
+@use '../../colors';
+/************************************************************************************************************************************************/
+/*ACTIONS CONTAINER*/
+/************************************************************************************************************************************************/
+.actions-container{
+    padding: 2%;
+    border-radius: 0 0 5px 5px;
+    min-width: 0;
+    min-height: 0;
+    display: grid;
+    align-items: center;
+}
+
+.price-label{
+    grid-column: 1 / 1;
+    margin: 0;
+}
+
+.action-btn{
+    grid-column: 3 / 3;
+    font-size: 0.9rem;
+    min-height: 40px;
+    background-color: colors.$col_1_4;
+    border: 1px solid colors.$col_1_3;
+    border-radius: 5px;
+    color: colors.$col_1_1;
+}
+
+.action-btn:hover{
+    background-color: colors.$col_1_3;
+}
+/************************************************************************************************************************************************/

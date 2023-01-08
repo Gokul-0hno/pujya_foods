@@ -1,0 +1,112 @@
+@use "../../colors";
+// ************************************************************************************************************************************************
+// INTRO
+// ************************************************************************************************************************************************
+$intro_container_height: max(250px, 60vh);
+
+.intro {
+    background-color: colors.$col_1_3;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: $intro_container_height;
+    min-width: 0;
+}
+
+
+.intro-text{
+    color: white;
+    font-family: sans-serif;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px black;
+}
+
+.intro-img-wrapper{
+    width: 100%;
+    background-color: rgba(colors.$col_1_3, 0.6);
+    background-image: url(./images/intro-img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    grid-column: 1 / 1;
+    
+    display: grid;
+    grid-template-rows: repeat(7, minmax(0, 1fr));
+    justify-items: center;
+    align-items: center;    
+
+    height: $intro_container_height;
+}
+
+.intro-text-wrapper{
+    grid-row: 1 / span 5;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 5%;
+    width: 90%;
+    text-align: center;
+}
+
+.intro-btn{
+    border: none;
+    background-color: colors.$col_1_2;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    grid-row: 6 / span 1;
+    min-width: 180px;
+    height: 80%;
+}
+
+.intro-btn:hover{
+    background-color: colors.$col_1_1;
+    cursor: pointer;
+}
+
+/************************************************************************************************************************************************/
+/*MEDIA QUERIES*/
+/************************************************************************************************************************************************/
+@media screen and (min-width: 550px) {
+    .intro-text{
+        font-size: 2.75rem;
+    }   
+}   
+
+@media screen and (min-width:750px) {
+    .intro-img-wrapper{
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-rows: repeat(6, minmax(0, 1fr));
+    }
+
+    .intro-text-wrapper{
+        grid-column: 2 / span 3;
+        grid-row: 1 / span 5;
+    }
+    .intro-text{
+
+        font-size: 3rem;
+    }
+    .intro-btn{
+        width: 180px;
+        height: 80%;
+        grid-row: 5 / span 1;
+        grid-column: 2 / span 3;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .intro-img-wrapper{
+        grid-template-rows: repeat(7, minmax(0, 1fr));
+    }
+
+    .intro-btn{
+        grid-column: 3 / span 1;
+        width: 180px;
+        grid-row: 6 / span 1;
+    }
+
+    .intro-text{
+        font-size: 3.5rem;
+    }
+    
+}

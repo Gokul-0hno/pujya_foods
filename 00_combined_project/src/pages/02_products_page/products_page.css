@@ -1,0 +1,8 @@
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/*# sourceMappingURL=products_page.css.map */
