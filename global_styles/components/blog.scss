@@ -1,0 +1,65 @@
+@use '../colors';
+/************************************************************************************************************************************************/
+/*BLOG CONTAINER*/
+/************************************************************************************************************************************************/
+.blog-meta-wrapper{
+    margin: 1rem;
+}
+
+.blog-wrapper{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    border: 1px solid hsl(0, 0%, 50%);
+    margin: 0 ;
+    width: 100%;
+}
+
+
+.blog-title-bar{
+    background-color: colors.$col_1_3;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    padding: 1%;
+}
+
+.blog-nav{
+    justify-self: right;
+}
+
+
+.head-title{
+    margin: 1%;
+}
+
+.head-author{
+    margin: 1%;
+}
+
+.head-date{
+    margin: 1%;
+}
+
+.blog-content-pane{
+    padding: 1%;
+    height: 40vh;
+}
+
+.blog-nav-left{
+    border: none;
+    font-size: 1.5rem;
+}
+
+.blog-nav-right{
+    border: none;
+    font-size: 1.5rem;
+}
+
+.blog-nav-btn{
+    background-color: colors.$col_1_3;
+}
+
+.blog-nav-btn:hover{
+    background-color: colors.$col_1_2;
+    cursor: pointer;
+}
+/************************************************************************************************************************************************/

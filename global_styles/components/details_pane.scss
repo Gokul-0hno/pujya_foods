@@ -1,0 +1,50 @@
+/************************************************************************************************************************************************/
+/*DETAILS PANE*/
+/************************************************************************************************************************************************/
+
+.details-pane{
+    background-color: colors.$col_1_1;
+    padding: 1rem 1rem 0;
+    position: relative;
+    height: auto;
+}
+
+.dp-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.dp-desc{
+    line-height: 1.5;
+}
+
+.dp-actions-container{
+    background-color: inherit;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 1rem;
+    bottom: 0px;
+    position: sticky;
+    padding: 1rem 0;
+}
+
+.dp-price-label{
+    margin: 0;
+}
+
+.dp-action-btn{
+    width: 100%;
+    font-size: 0.9rem;
+    height: 40px;
+    background-color: colors.$col_1_4;
+    border: 1px solid colors.$col_1_3;
+    border-radius: 5px;
+    color: colors.$col_1_1;
+}
+
+.dp-action-btn:hover{
+    cursor: pointer;
+}
+
+
