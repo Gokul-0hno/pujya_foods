@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM  from "react-dom/client";
-import DetailsPage from "./pages/03_details_page/details_page";
+import HomePage from "./pages/01_home_page/home_page";
 function App() {
     return(
-       <DetailsPage />
+       <HomePage />
     );
 }
 
