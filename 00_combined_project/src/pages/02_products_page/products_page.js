@@ -9,7 +9,6 @@ const data = [
     {"name": "Adapradhaman Payasam Mix", "quantity": "250gms", "description": "Lorem Ipsum Dolores Sit Amet", "cost": "77.27"},
     {"name": "Sadhya Palada Payasam Mix", "quantity": "500gms", "description": "Lorem Ipsum Dolores Sit Amet", "cost": "215"},
     {"name": "Rava Kesari Mix", "quantity": "200gms", "description": "Lorem Ipsum Dolores Sit Amet", "cost": "65"},
-    {"name": "Aniruddh", "quantity": "random", "description": "random", "cost": "random"}
 ]
 
 export default function ProductsPage() {
