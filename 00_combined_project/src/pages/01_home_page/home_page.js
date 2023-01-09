@@ -36,7 +36,7 @@ function Intro() {
                 <div className="intro-text-wrapper" id="intro-text-wrapper">
                     <h1 className="intro-text" id="intro-text">EXPERIENCE THE TASTE OF SOUTH INDIA</h1>
                 </div>
-                <button className="intro-btn" id="intro-btn">VIEW ALL PRODUCTS</button>
+                <a className="intro-btn" style={{backgroundColor: "transparent"}} href="/products"><button className="intro-btn" id="intro-btn" >VIEW ALL PRODUCTS</button></a>
             </div>        
         </section>
     );

@@ -37,10 +37,10 @@ class Navbar extends React.Component {
     render() {
         return(
             <nav className="navbar" id="navbar">
-                <button className="nav-link nav-brand" onClick={this.handleTestClick}>PUJYA Foods</button>
+                <a className="nav-link nav-brand" href="/">PUJYA Foods</a>
                 <button className="nav-btn" id="nav-btn" onClick={this.handleClick}><i className="fa-solid fa-bars"></i></button>
                 <div className="nav-items" id="nav-items">
-                    <a className="nav-link" href="/.netlify/functions/products">Products</a>
+                    <a className="nav-link" href="/products">Products</a>
                     <a className="nav-link" href="#about">About us</a>
                     <a className="nav-link" href="#contact">Contact us</a>
                 </div>

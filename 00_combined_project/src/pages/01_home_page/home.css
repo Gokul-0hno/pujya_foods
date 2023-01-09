@@ -45,6 +45,8 @@
   grid-row: 6/span 1;
   min-width: 180px;
   height: 80%;
+  text-decoration: none;
+  text-align: center;
 }
 
 .intro-btn:hover {
