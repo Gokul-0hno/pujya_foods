@@ -1,5 +1,6 @@
 import React from "react";
 import './navbar.css';
+import getProducts from "../../client_side_APIs/get_products";
 
 class Navbar extends React.Component {
 
@@ -29,10 +30,14 @@ class Navbar extends React.Component {
         }
     }
 
+    handleTestClick = (event) => {
+        getProducts().then(() => console.log("Success :)"));
+    }
+
     render() {
         return(
             <nav className="navbar" id="navbar">
-                <button className="nav-link nav-brand">PUJYA Foods</button>
+                <button className="nav-link nav-brand" onClick={this.handleTestClick}>PUJYA Foods</button>
                 <button className="nav-btn" id="nav-btn" onClick={this.handleClick}><i className="fa-solid fa-bars"></i></button>
                 <div className="nav-items" id="nav-items">
                     <a className="nav-link" href="/.netlify/functions/products">Products</a>
